@@ -38,16 +38,16 @@
 
     </LinearLayout>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+
+    <ImageButton
         android:id="@+id/fabBtn"
+        android:layout_gravity="bottom|right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/group_32"
-        android:layout_gravity="bottom|right"
-        app:borderWidth = "0dp"
-        android:contentDescription="TODO"
         android:layout_marginRight="10sp"
-        android:layout_marginBottom="10sp"/>
+        android:layout_marginBottom="10sp"
+        android:background="@drawable/slyle4"/>
 
     <TextView
         android:id="@+id/error"
