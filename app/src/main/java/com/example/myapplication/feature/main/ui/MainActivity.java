@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.data.api.users.UserApiService;
 import com.example.myapplication.domain.model.User;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.List;
 
@@ -17,11 +18,16 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
+    private BottomNavigationView bt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        bt = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
+
+
 
         UserApiService.getInstance().getUsers().enqueue(new Callback<List<User>>() {
             @Override
