@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
         <item
             android:id="@+id/getterAdvrsF"
             android:icon="@drawable/shoppingbasketshop"
             android:title="Магазин"
-            android:enabled="true" />
+            android:enabled="true"
+            app:showAsAction="ifRoom"/>
         <item
             android:id="@+id/getterNotifyF"
             android:icon="@drawable/doneliked"
-            android:title="Понравилось" />
+            android:title="Понравилось"
+            app:showAsAction="ifRoom"/>
 
         <item
             android:id="@+id/marketsMapF"
             android:icon="@drawable/personprofile"
-            android:title="Профиль" />
+            android:title="Профиль"
+            app:showAsAction="ifRoom"/>
 </menu>

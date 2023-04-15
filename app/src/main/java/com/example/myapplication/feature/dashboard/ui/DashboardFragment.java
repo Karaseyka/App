@@ -2,6 +2,7 @@ package com.example.myapplication.feature.dashboard.ui;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -12,12 +13,15 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.example.myapplication.R;
 import com.example.myapplication.databinding.FragmentDashboardBinding;
 import com.example.myapplication.domain.model.Projects;
 import com.example.myapplication.domain.model.User;
 import com.example.myapplication.feature.dashboard.presentation.DashboardStatus;
 import com.example.myapplication.feature.dashboard.presentation.DashboardViewModel;
 import com.example.myapplication.feature.dashboard.ui.recycler.ProjectAdapter;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +36,13 @@ public class DashboardFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         viewModel = new ViewModelProvider(this).get(DashboardViewModel.class);
         binding = FragmentDashboardBinding.inflate(inflater);
+        BottomNavigationView bottomNavigationView = getView().findViewById(R.id.getter_navigation);
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                return false;
+            }
+        });
         return binding.getRoot();
     }
 
