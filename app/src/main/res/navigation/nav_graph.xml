@@ -11,12 +11,37 @@
         <action
             android:id="@+id/action_dashboard_to_profile"
             app:destination="@+id/profile"/>
+        <action
+            android:id="@+id/action_dashboard_to_profile1"
+            app:destination="@+id/profile1"/>
+        <action
+            android:id="@+id/action_dashboard_to_liked"
+            app:destination="@+id/liked"/>
     </fragment>
 
     <fragment
         android:id="@+id/profile"
         android:name="com.example.myapplication.feature.profile.ui.ProfileFragment"
         tools:layout="@layout/fragment_profile">
+        <argument android:name="id"
+            app:argType="long"
+            app:nullable="false"/>
+    </fragment>
+    <fragment
+        android:id="@+id/liked"
+        tools:layout="@layout/fragment_liked"
+        android:name="com.example.myapplication.feature.dashboard.ui.DashboardFragment">
+        <action
+            android:id="@+id/action_dashboard_to_profile"
+            app:destination="@+id/profile"/>
+        <action
+            android:id="@+id/action_dashboard_to_shop"
+            app:destination="@+id/dashboard"/>
+    </fragment>
+    <fragment
+        android:id="@+id/profile1"
+        android:name="com.example.myapplication.feature.profile.ui.ProfileFragment"
+        tools:layout="@layout/layout_profile">
         <argument android:name="id"
             app:argType="long"
             app:nullable="false"/>

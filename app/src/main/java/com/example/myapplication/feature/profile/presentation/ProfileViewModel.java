@@ -5,7 +5,9 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.myapplication.data.repository.ProjectRepository;
 import com.example.myapplication.data.repository.UserRepository;
+import com.example.myapplication.domain.model.Projects;
 import com.example.myapplication.domain.model.User;
 import com.example.myapplication.feature.dashboard.presentation.DashboardStatus;
 
@@ -19,21 +21,21 @@ public class ProfileViewModel extends ViewModel {
     private final MutableLiveData<ProfileStatus> _status = new MutableLiveData<>();
     public LiveData<ProfileStatus> status = _status;
 
-    private final MutableLiveData<User> _user = new MutableLiveData<>();
-    public LiveData<User> user = _user;
+    private final MutableLiveData<Projects> _user = new MutableLiveData<>();
+    public LiveData<Projects> user = _user;
 
     public void load(long id) {
         _status.setValue(ProfileStatus.LOADING);
-        UserRepository.getUser(id).enqueue(new Callback<User>() {
+        ProjectRepository.getProject(id).enqueue(new Callback<Projects>() {
             @Override
-            public void onResponse(Call<User> call, @NonNull Response<User> response) {
+            public void onResponse(Call<Projects> call, @NonNull Response<Projects> response) {
                 _status.setValue(ProfileStatus.LOADED);
                 _user.setValue(response.body());
 
             }
 
             @Override
-            public void onFailure(Call<User> call, Throwable t) {
+            public void onFailure(Call<Projects> call, Throwable t) {
                 _status.setValue(ProfileStatus.FALURE);
                 t.printStackTrace();
 
@@ -43,7 +45,7 @@ public class ProfileViewModel extends ViewModel {
 
     public void delete(long id){
         _status.setValue(ProfileStatus.LOADING);
-        UserRepository.deleteUser(id).enqueue(new Callback<Void>() {
+        ProjectRepository.deleteProject(id).enqueue(new Callback<Void>() {
             @Override
             public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
                 _status.setValue(ProfileStatus.DELETE);

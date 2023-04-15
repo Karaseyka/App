@@ -3,14 +3,17 @@
 android:layout_width="match_parent"
 android:layout_height="wrap_content"
 android:background="@drawable/style1"
+    android:layout_marginBottom="15dp"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools">
 
 <LinearLayout
+    android:layout_marginTop="50dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginLeft="20sp"
     android:layout_marginRight="20sp"
+
     android:orientation="vertical">
 
     <TextView

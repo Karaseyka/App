@@ -22,7 +22,7 @@ public class ProjectViewHolder extends RecyclerView.ViewHolder {
     void bind(Projects item){
         binding.name.setText(item.getName());
         binding.email.setText(item.getDescription());
-
+        binding.getRoot().setOnClickListener(v -> listener.onClick(item.getId()));
         Glide.with(binding.getRoot()).load("https://vkusnaya-tochka-menu.ru/wp-content/cache/thumb/c3/9cb1c24c81d8ec3_320x200_notrise.jpg")
                 .into(binding.imageObyavlenie1);
         Log.d("vdl;gkshpla;j", "lf;h;dgivjzhpdodhuviah");
