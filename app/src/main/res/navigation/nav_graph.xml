@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboard">
+    <fragment
+        android:id="@+id/dashboard"
+        tools:layout="@layout/fragment_dashboard"
+        android:name="com.example.myapplication.feature.dashboard.ui.DashboardFragment">
+        <action
+            android:id="@+id/action_dashboard_to_profile"
+            app:destination="@+id/profile"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.myapplication.feature.profile.ui.ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <argument android:name="id"
+            app:argType="long"
+            app:nullable="false"/>
+    </fragment>
+
+</navigation>
