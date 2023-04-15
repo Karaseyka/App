@@ -2,13 +2,16 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/style1"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/name_of_advertisment"
@@ -17,7 +20,8 @@
 
             app:layout_constraintVertical_chainStyle="packed"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Приложение для кофейни"/>
+            tools:text="Приложение для кофейни"
+            android:textSize="15sp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,40 +29,62 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:src="@color/black"
-
+                android:adjustViewBounds="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/image_obyavlenie1"
                 />
 
             <ImageView
-
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/image_obyavlenie2"
                 />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:adjustViewBounds="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/like"
+                tools:src="@drawable/thumb_up"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/like_counter"
+                android:layout_marginRight="10sp"
+                android:layout_marginLeft="5sp"
+                android:text="0"
+                android:layout_gravity="center"/>
+
+            <ImageView
+                android:adjustViewBounds="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dislike"
+                tools:src="@drawable/thumb_down"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dislike_counter"
+                android:layout_marginRight="10sp"
+                android:layout_marginLeft="5sp"
+                android:text="0"
+                android:layout_gravity="center"/>
+
 
         </LinearLayout>
 
 
+
     </LinearLayout>
-
-
-
-
-
-    <ImageView
-        android:id="@+id/image1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="@null" />
-
-    <ImageView
-        android:id="@+id/image2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="@null"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="16dp" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
