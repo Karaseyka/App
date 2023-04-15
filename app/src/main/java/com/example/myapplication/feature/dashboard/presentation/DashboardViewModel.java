@@ -4,7 +4,9 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.myapplication.data.repository.ProjectRepository;
 import com.example.myapplication.data.repository.UserRepository;
+import com.example.myapplication.domain.model.Projects;
 import com.example.myapplication.domain.model.User;
 
 import java.util.List;
@@ -17,20 +19,20 @@ public class DashboardViewModel extends ViewModel {
     private final MutableLiveData<DashboardStatus> _status = new MutableLiveData<>();
     public LiveData<DashboardStatus> status = _status;
 
-    private final MutableLiveData<List<User>> _users = new MutableLiveData<>();
-    public LiveData<List<User>> users = _users;
+    private final MutableLiveData<List<Projects>> _project = new MutableLiveData<>();
+    public LiveData<List<Projects>> project = _project;
 
     public void load(){
         _status.setValue(DashboardStatus.LOADING);
-        UserRepository.getUsers().enqueue(new Callback<List<User>>() {
+        ProjectRepository.getProjects().enqueue(new Callback<List<Projects>>() {
             @Override
-            public void onResponse(Call<List<User>> call, Response<List<User>> response) {
+            public void onResponse(Call<List<Projects>> call, Response<List<Projects>> response) {
                 _status.setValue(DashboardStatus.LOADED);
-                _users.setValue(response.body());
+                _project.setValue(response.body());
             }
 
             @Override
-            public void onFailure(Call<List<User>> call, Throwable t) {
+            public void onFailure(Call<List<Projects>> call, Throwable t) {
                 _status.setValue(DashboardStatus.FALURE);
                 t.printStackTrace();
 

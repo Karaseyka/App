@@ -7,7 +7,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.R;
+import com.example.myapplication.data.api.projects.ProjectApiService;
 import com.example.myapplication.data.api.users.UserApiService;
+import com.example.myapplication.domain.model.Projects;
 import com.example.myapplication.domain.model.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -19,20 +21,24 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
 
-        UserApiService.getInstance().getUsers().enqueue(new Callback<List<User>>() {
+
+
+        ProjectApiService.getInstance().getProjects().enqueue(new Callback<List<Projects>>() {
             @Override
-            public void onResponse(@NonNull Call<List<User>> call, @NonNull Response<List<User>> response) {
+            public void onResponse(@NonNull Call<List<Projects>> call, @NonNull Response<List<Projects>> response) {
                 Log.d("kffffffffff", response.body().toString());
             }
 
             @Override
-            public void onFailure(@NonNull Call<List<User>> call, @NonNull Throwable t) {
+            public void onFailure(@NonNull Call<List<Projects>> call, @NonNull Throwable t) {
+                Log.d("kffffffffff", "kflhsdj;sb.lnjflsj;p;");
                 t.printStackTrace();
 
             }

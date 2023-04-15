@@ -1,90 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:background="@drawable/style1"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools">
+
+<LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/style1"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="match_parent"
+    android:layout_marginLeft="20sp"
+    android:layout_marginRight="20sp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Приложение для кофейни"
+        android:textSize="15sp"/>
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="ghhghfjfk"
+        android:textSize="15sp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="20sp"
-        android:layout_marginRight="20sp"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
+        <ImageView
+
+            android:adjustViewBounds="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/image_obyavlenie1"
+            />
+
+        <ImageView
+            android:adjustViewBounds="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/image_obyavlenie2"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:adjustViewBounds="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/like"
+            tools:src="@drawable/thumb_up"
+            />
         <TextView
-            android:id="@+id/name_of_advertisment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/like_counter"
+            android:layout_marginRight="10sp"
+            android:layout_marginLeft="5sp"
+            android:text="0"
+            android:layout_gravity="center"/>
+
+        <ImageView
+            android:adjustViewBounds="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dislike"
+            tools:src="@drawable/thumb_down"
+            />
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            app:layout_constraintVertical_chainStyle="packed"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Приложение для кофейни"
-            android:textSize="15sp"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:adjustViewBounds="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/image_obyavlenie1"
-                />
-
-            <ImageView
-                android:adjustViewBounds="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/image_obyavlenie2"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:adjustViewBounds="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/like"
-                tools:src="@drawable/thumb_up"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/like_counter"
-                android:layout_marginRight="10sp"
-                android:layout_marginLeft="5sp"
-                android:text="0"
-                android:layout_gravity="center"/>
-
-            <ImageView
-                android:adjustViewBounds="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/dislike"
-                tools:src="@drawable/thumb_down"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/dislike_counter"
-                android:layout_marginRight="10sp"
-                android:layout_marginLeft="5sp"
-                android:text="0"
-                android:layout_gravity="center"/>
-
-
-        </LinearLayout>
-
+            android:id="@+id/dislike_counter"
+            android:layout_marginRight="10sp"
+            android:layout_marginLeft="5sp"
+            android:text="0"
+            android:layout_gravity="center"/>
 
 
     </LinearLayout>
+
+
+
+</LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

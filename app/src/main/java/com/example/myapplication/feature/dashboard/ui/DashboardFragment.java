@@ -8,16 +8,16 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.myapplication.databinding.FragmentDashboardBinding;
+import com.example.myapplication.domain.model.Projects;
 import com.example.myapplication.domain.model.User;
 import com.example.myapplication.feature.dashboard.presentation.DashboardStatus;
 import com.example.myapplication.feature.dashboard.presentation.DashboardViewModel;
-import com.example.myapplication.feature.dashboard.ui.recycler.UserAdapter;
-import com.example.myapplication.feature.dashboard.ui.recycler.UserClickListener;
+import com.example.myapplication.feature.dashboard.ui.recycler.ProjectAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,7 @@ import java.util.List;
 public class DashboardFragment extends Fragment {
     private DashboardViewModel viewModel;
     private FragmentDashboardBinding binding;
-    private UserAdapter adapter;
+    private ProjectAdapter adapter;
 
     @Nullable
     @Override
@@ -38,11 +38,12 @@ public class DashboardFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        adapter = new UserAdapter(id -> Navigation.findNavController(binding.getRoot()).navigate(DashboardFragmentDirections.actionDashboardToProfile(id)));
+        adapter = new ProjectAdapter(id -> Navigation.findNavController(binding.getRoot()).navigate(DashboardFragmentDirections.actionDashboardToProfile(id)));
         binding.recycler.setAdapter(adapter);
-        List<User> users = new ArrayList<>();
+        binding.recycler.setLayoutManager(new LinearLayoutManager(getContext()));
+        List<Projects> projects = new ArrayList<>();
         viewModel.status.observe(getViewLifecycleOwner(), this::renderStatus);
-        viewModel.users.observe(getViewLifecycleOwner(), this::renderUser);
+        viewModel.project.observe(getViewLifecycleOwner(), this::renderProjects);
         if (savedInstanceState == null) viewModel.load();
 
     }
@@ -70,9 +71,9 @@ public class DashboardFragment extends Fragment {
         }
     }
 
-    private void renderUser(List<User> users){
-        binding.empty.setVisibility(users.isEmpty() ? View.VISIBLE : View.INVISIBLE);
-        adapter.setItems(users);
+    private void renderProjects(List<Projects> projects){
+        binding.empty.setVisibility(projects.isEmpty() ? View.VISIBLE : View.INVISIBLE);
+        adapter.setItems(projects);
     }
 
     @Override

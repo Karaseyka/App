@@ -8,29 +8,30 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView.Adapter;
 
 import com.example.myapplication.databinding.ItemUserBinding;
+import com.example.myapplication.domain.model.Projects;
 import com.example.myapplication.domain.model.User;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserAdapter extends Adapter<UserViewHolder> {
-    private List<User> items = new ArrayList<>();
-    private final UserClickListener listener;
+public class ProjectAdapter extends Adapter<ProjectViewHolder> {
+    private List<Projects> items = new ArrayList<>();
+    private final ProjectClickListener listener;
 
-    public UserAdapter(UserClickListener listener){
+    public ProjectAdapter(ProjectClickListener listener){
         this.listener = listener;
 
     }
 
     @NonNull
     @Override
-    public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ProjectViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ItemUserBinding binding = ItemUserBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
-        return new UserViewHolder(binding, listener);
+        return new ProjectViewHolder(binding, listener);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ProjectViewHolder holder, int position) {
         holder.bind(items.get(position));
     }
 
@@ -39,7 +40,7 @@ public class UserAdapter extends Adapter<UserViewHolder> {
         return items.size();
     }
 
-    public void setItems(List<User> items){
+    public void setItems(List<Projects> items){
         int count = getItemCount();
         this.items = new ArrayList<>(items);
         notifyItemRangeChanged(0, Math.max(count, getItemCount()));
