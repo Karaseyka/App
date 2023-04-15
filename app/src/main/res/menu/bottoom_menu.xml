@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item
+            android:id="@+id/getterAdvrsF"
+            android:icon="@drawable/shoppingbasketshop"
+            android:title="Магазин"
+            android:enabled="true" />
+        <item
+            android:id="@+id/getterNotifyF"
+            android:icon="@drawable/doneliked"
+            android:title="Понравилось" />
+
+        <item
+            android:id="@+id/marketsMapF"
+            android:icon="@drawable/personprofile"
+            android:title="Профиль" />
+</menu>
