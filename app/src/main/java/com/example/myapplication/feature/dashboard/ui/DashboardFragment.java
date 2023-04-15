@@ -51,6 +51,7 @@ public class DashboardFragment extends Fragment {
         viewModel.status.observe(getViewLifecycleOwner(), this::renderStatus);
         viewModel.project.observe(getViewLifecycleOwner(), this::renderProjects);
         if (savedInstanceState == null) viewModel.load();
+        binding.fabBtn.setOnClickListener(v -> Navigation.findNavController(binding.getRoot()).navigate(R.id.action_dashboard_to_add));
 
     }
     private void renderStatus(DashboardStatus status){

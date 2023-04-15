@@ -17,6 +17,9 @@
         <action
             android:id="@+id/action_dashboard_to_liked"
             app:destination="@+id/liked"/>
+        <action
+            android:id="@+id/action_dashboard_to_add"
+            app:destination="@+id/add" />
     </fragment>
 
     <fragment
@@ -27,6 +30,15 @@
             app:argType="long"
             app:nullable="false"/>
     </fragment>
+
+
+    <activity
+        android:id="@+id/add"
+        android:name="com.example.myapplication.feature.add.Add"
+        tools:layout="@layout/activity_new_advertisment">
+
+    </activity>
+
     <fragment
         android:id="@+id/liked"
         tools:layout="@layout/fragment_liked"
