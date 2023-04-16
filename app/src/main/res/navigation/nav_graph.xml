@@ -53,10 +53,16 @@
     <fragment
         android:id="@+id/project"
         android:name="com.example.myapplication.feature.project.ui.ProjectFragment"
-        tools:layout="@layout/layout_profile">
+        tools:layout="@layout/fragment_opened_advertistment">
         <argument android:name="id"
             app:argType="long"
             app:nullable="false"/>
+        <action
+            android:id="@+id/action_project_to_dashboard"
+            app:destination="@id/dashboard" />
+        <action
+            android:id="@+id/action_project_to_add"
+            app:destination="@id/add" />
     </fragment>
 
 </navigation>

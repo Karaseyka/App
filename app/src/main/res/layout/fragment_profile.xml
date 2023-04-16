@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
     android:gravity="center">
 
     <LinearLayout
@@ -13,7 +14,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/personprofile"
+            android:src="@drawable/person"
             android:layout_marginLeft="10sp"
             android:layout_marginTop="10sp"/>
 
@@ -33,7 +34,9 @@
                 android:id="@+id/image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:contentDescription="@null" />
+                android:contentDescription="@null"
+                android:background="@color/grey_light"
+                android:src="@drawable/baseline_photo_camera_24"/>
 
         </androidx.cardview.widget.CardView>
 
@@ -46,13 +49,15 @@
             android:layout_marginTop="20sp"
             android:id="@+id/nickname"
             android:text="kjmfdiods"
+            android:background="@drawable/style2"
             android:textSize="25sp"
             />
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/style2"
             android:layout_gravity="center"
-            android:layout_marginTop="0sp"
+            android:layout_marginTop="20sp"
             android:textSize="10sp"
             android:id="@+id/surname"
             android:text="kjmfdiods sjhkksbe"

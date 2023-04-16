@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     app:navGraph="@navigation/nav_graph"
     app:defaultNavHost="true" >
-<androidx.fragment.app.FragmentContainerView
+<fragment
 android:id="@+id/nav_host_getter_fragment"
     app:layout_constraintBottom_toTopOf="@+id/getter_navigation"
 android:name="androidx.navigation.fragment.NavHostFragment"
@@ -25,6 +25,7 @@ android:id="@+id/getter_navigation"
 android:layout_width="match_parent"
 android:layout_height="wrap_content"
 app:itemTextColor="@color/black"
+    android:backgroundTint="@color/white"
 app:layout_constraintBottom_toBottomOf="parent"
     android:background="@color/white"
 
