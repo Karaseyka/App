@@ -70,8 +70,10 @@ public class Add extends AppCompatActivity {
                 LiveData<Projects> project = _project;
                 EditText et = findViewById(R.id.desc);
                 TextView tv = findViewById(R.id.k);
+                EditText et2 = findViewById(R.id.name_of_project_edit);
+
                 HashMap<String,String> SendData =new HashMap<>();
-                SendData.put("name", "fjgh");
+                SendData.put("name", et2.getText().toString());
                 SendData.put("description", et.getText().toString());
                 SendData.put("user_nick", sp.getString(Profile.NICK, "unnamed"));
 

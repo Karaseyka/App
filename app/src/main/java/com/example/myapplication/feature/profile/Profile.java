@@ -27,7 +27,7 @@ public class Profile extends Fragment {
     private SharedPreferences sp;
     private final String NAME = "name";
     public static final String NICK = "nick";
-    private final String TM = "telegram";
+    public static final String TM = "telegram";
     private FragmentProfileBinding binding;
 
     @Nullable
