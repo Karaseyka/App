@@ -58,44 +58,22 @@ xmlns:tools="http://schemas.android.com/tools">
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="right"
         android:orientation="horizontal">
-
-        <ImageView
-            android:adjustViewBounds="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/like"
-            tools:src="@drawable/thumb_up"
-            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/like_counter"
-            android:layout_marginRight="10sp"
-            android:layout_marginLeft="5sp"
-            android:text="0"
-            android:layout_gravity="center"/>
-
-        <ImageView
-            android:adjustViewBounds="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/dislike"
-            tools:src="@drawable/thumb_down"
-            />
+            android:text="Автор:"
+            android:textColor="@color/grey_300"/>
         <TextView
+            android:id="@+id/name_of_autor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:id="@+id/dislike_counter"
-            android:layout_marginRight="10sp"
-            android:layout_marginLeft="5sp"
-            android:text="0"
-            android:layout_gravity="center"/>
-
-
+            android:text="fjdifd"
+            android:layout_marginLeft="2sp"
+            android:textColor="@color/grey_300"/>
     </LinearLayout>
 
 
