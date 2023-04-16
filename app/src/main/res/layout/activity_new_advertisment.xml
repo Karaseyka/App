@@ -31,10 +31,33 @@
                 android:layout_marginLeft="30sp"/>
         </LinearLayout>
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30sp"
+            android:layout_gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Название:"
+                android:textSize="20sp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30sp"/>
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Название проекта"
+                android:textSize="17sp"
+                android:id="@+id/name_of_project_edit"
+                android:background="@drawable/style2"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30sp"/>
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="70sp"
+            android:layout_marginTop="50sp"
             android:layout_gravity="center">
             <TextView
                 android:layout_width="wrap_content"
