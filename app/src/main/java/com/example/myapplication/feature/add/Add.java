@@ -60,7 +60,7 @@ public class Add extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SharedPreferences sp;
-                sp = Add.this.getPreferences(Context.MODE_PRIVATE);
+                sp = Add.this.getSharedPreferences("User_info", Context.MODE_PRIVATE);
                 MutableLiveData<Projects> _project = new MutableLiveData<>();
                 LiveData<Projects> project = _project;
                 EditText et = findViewById(R.id.desc);

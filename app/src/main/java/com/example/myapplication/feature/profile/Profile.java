@@ -42,7 +42,7 @@ public class Profile extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         try {
-            sp = requireActivity().getPreferences(Context.MODE_PRIVATE);
+            sp = requireActivity().getSharedPreferences("User_info", Context.MODE_PRIVATE);
             binding.surname.setText(sp.getString(NAME, "11"));
             binding.nickname.setText(sp.getString(NICK, "344"));
             binding.contacty.setText(sp.getString(TM, "67"));
@@ -50,7 +50,7 @@ public class Profile extends Fragment {
         binding.save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sp = requireActivity().getPreferences(Context.MODE_PRIVATE);
+                sp = requireActivity().getSharedPreferences("User_info", Context.MODE_PRIVATE);
                 SharedPreferences.Editor ed = sp.edit();
                 ed.putString(NAME, binding.surname.getText().toString());
                 ed.putString(NICK, binding.nickname.getText().toString());
