@@ -45,7 +45,7 @@ public class Add extends AppCompatActivity {
                 EditText et = findViewById(R.id.desc);
                 TextView tv = findViewById(R.id.k);
 
-                ProjectRepository.addProject("fggh", et.getText().toString(), "jj", tv.getText().toString()).enqueue(new Callback<Projects>() {
+                ProjectRepository.addProject("fggh", et.getText().toString(), "jj", "ghh").enqueue(new Callback<Projects>() {
                     @Override
                     public void onResponse(Call<Projects> call, Response<Projects> response) {
                         _project.setValue(response.body());
