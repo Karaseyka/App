@@ -79,10 +79,11 @@
             android:text="Введите описание здесь:"/>
 
         <EditText
+            android:id="@+id/desc"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="10sp"
-            android:layout_marginRight="10sp"
-            android:layout_height="wrap_content"/>
+            android:layout_marginRight="10sp" />
 
 
 
@@ -92,13 +93,14 @@
             android:orientation="horizontal"
             android:layout_marginTop="60sp"
             android:layout_gravity="center">
+
             <TextView
+                android:id="@+id/k"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginRight="40sp"
-                android:text="Загрузите фотографии продукта:"
-                />
+                android:text="Загрузите фотографии продукта:" />
 
             <ImageButton
                 android:id="@+id/addFoto"
@@ -123,14 +125,20 @@
                 android:textColor="@color/white"/>
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/ready"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Готово"
-                android:background="@drawable/slyle3"
                 android:layout_marginLeft="20sp"
-                android:textColor="@color/white"/>
-
+                android:background="@drawable/slyle3"
+                android:text="Готово"
+                android:textColor="@color/white" />
         </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:srcCompat="@tools:sample/avatars" />
 
 
     </LinearLayout>
