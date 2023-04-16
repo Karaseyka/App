@@ -17,6 +17,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
@@ -24,6 +26,8 @@ import com.bumptech.glide.Glide;
 import com.example.myapplication.R;
 import com.example.myapplication.data.repository.ProjectRepository;
 import com.example.myapplication.domain.model.Projects;
+import com.example.myapplication.feature.dashboard.ui.DashboardFragment;
+import com.example.myapplication.feature.main.ui.MainActivity;
 import com.example.myapplication.feature.profile.Profile;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -54,6 +58,7 @@ public class Add extends AppCompatActivity {
         FirebaseApp.initializeApp(getApplicationContext());
         ImageButton PickImage = findViewById(R.id.addFoto);
         Button bt = findViewById(R.id.ready);
+        Button bt2 = findViewById(R.id.button_back);
         storage = FirebaseStorage.getInstance();
         storageReference = storage.getReference();
         bt.setOnClickListener(new View.OnClickListener() {
@@ -86,8 +91,20 @@ public class Add extends AppCompatActivity {
 
                     }
                 });
+                Intent switcher = new Intent(Add.this, MainActivity.class);
+                startActivity(switcher);
             }
         });
+
+        bt2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent switcher = new Intent(Add.this, MainActivity.class);
+                startActivity(switcher);
+            }
+        });
+
+
         //Настраиваем для нее обработчик нажатий OnClickListener:
         PickImage.setOnClickListener(new View.OnClickListener() {
 

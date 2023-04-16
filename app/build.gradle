@@ -49,6 +49,8 @@ dependencies {
     // Glide
     implementation "com.github.bumptech.glide:glide:$glide_version"
     implementation 'com.google.firebase:firebase-storage-ktx:20.1.0'
+    implementation 'com.google.firebase:firebase-common:20.1.0'
+    implementation 'com.google.android.gms:play-services-tasks:18.0.1'
 
 }
 apply plugin: 'com.google.gms.google-services'
