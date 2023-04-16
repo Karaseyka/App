@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
@@ -46,9 +47,11 @@ public class Add extends AppCompatActivity {
                 TextView tv = findViewById(R.id.k);
 
                 ProjectRepository.addProject("fggh", et.getText().toString(), "jj", "ghh").enqueue(new Callback<Projects>() {
+
                     @Override
                     public void onResponse(Call<Projects> call, Response<Projects> response) {
                         _project.setValue(response.body());
+                        Toast.makeText(Add.this, "Успешно", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
