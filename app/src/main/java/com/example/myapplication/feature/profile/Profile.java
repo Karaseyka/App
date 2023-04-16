@@ -26,7 +26,7 @@ public class Profile extends Fragment {
     private ProjectViewModel viewModel;
     private SharedPreferences sp;
     private final String NAME = "name";
-    private final String NICK = "nick";
+    public static final String NICK = "nick";
     private final String TM = "telegram";
     private FragmentProfileBinding binding;
 
